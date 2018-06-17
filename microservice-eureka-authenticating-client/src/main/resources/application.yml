@@ -1,0 +1,12 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: mircoservice-eureka-authenticating-client  # 注册到Eureka Server上的应用名称
+eureka:
+  client:
+    service-url:
+     #default-zone: http://localhost:8761/eureka/
+      defaultZone: http://user:password123@localhost:8761/eureka/     #需要用户名密码认证才能注册
+  instance:
+    prefer-ip-address: true                  #表示将自己的IP注册到Eureka Server。如果不配置该属性或将其设置为false，则表示注册微服务所在操作系统的hsotname到eureka Server
