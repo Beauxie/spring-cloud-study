@@ -1,0 +1,15 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+
+user:
+#  userServiceUrl: http://localhost:8000/
+  userServiceUrl: http://microservice-provider-user/
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true                  #表示将自己的IP注册到Eureka Server。如果不配置该属性或将其设置为false，则表示注册微服务所在操作系统的hsotname到eureka Server
